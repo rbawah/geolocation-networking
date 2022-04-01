@@ -76,7 +76,7 @@
 
                 <p>
                     <label>Broker Host:</label>
-                    <input type="text" id="host" value="test.mosquitto.org" />
+                    <input type="text" id="host" value="wss://test.mosquitto.org" />
                 </p>
                 <p>
                     <label>Port:</label>
@@ -111,7 +111,7 @@
     var connected_flag=0	
 	var mqtt;
     var reconnectTimeout = 2000;
-	var host="test.mosquitto.org";
+	var host=document.getElementById("host").value;
 	var port=8080;
     var sub_topic=document.getElementById("topic").value;
     var msg = document.getElementById("s-message").value;
@@ -159,7 +159,7 @@
 	console.log("connecting to "+ host +" "+ port);
 	var x=Math.floor(Math.random() * 10000); 
 	var cname="zasiah-"+x;
-	mqtt = new Paho.Client("wss://test.mosquitto.org", port, cname);
+	mqtt = new Paho.Client(host, port, cname);
 	//document.write("connecting to "+ host);
 	var options = {
         timeout: 3,
