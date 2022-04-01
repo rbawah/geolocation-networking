@@ -76,11 +76,11 @@
 
                 <p>
                     <label>Broker Host:</label>
-                    <input type="text" id="host" value="mqtt://test.mosquitto.org" />
+                    <input type="text" id="host" value="wss://test.mosquitto.org" />
                 </p>
                 <p>
                     <label>Port:</label>
-                    <input type="text" id="port" value="8080" />
+                    <input type="text" id="port" value="8081" />
                 </p>
                 <p>
                     <label>Topic:</label>
@@ -112,7 +112,7 @@
 	var mqtt;
     var reconnectTimeout = 2000;
 	var host=document.getElementById("host").value;
-	var port=8080;
+	var port=parseInt(document.getElementById("port").value);
     var sub_topic=document.getElementById("topic").value;
     var msg = document.getElementById("s-message").value;
     var topic = sub_topic;
